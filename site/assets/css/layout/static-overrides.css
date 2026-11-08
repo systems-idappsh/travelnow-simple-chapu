@@ -1,0 +1,54 @@
+/* =========================================================
+   static-overrides.css
+   Ajustes para la versión sin JavaScript de interacción:
+   FAQ nativo (details/summary), reseñas apiladas y sin controles.
+========================================================= */
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item > .faq-answer {
+  display: block !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+details[open] > summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.review-slider {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.review-slider .review {
+  display: block !important;
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  margin-bottom: 16px;
+}
+
+.static-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.static-jump a {
+  padding: 8px 14px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}

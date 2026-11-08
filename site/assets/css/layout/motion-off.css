@@ -1,0 +1,11 @@
+/* =========================================================
+   motion-off.css
+   Versión sin movimiento: anula animaciones y transiciones.
+========================================================= */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
