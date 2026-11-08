@@ -1,24 +1,20 @@
 # travelnow-simple-chapu
 
-Sitio estático básico de Travel Now. Solo se publica la carpeta `site/`. Lo demás del repo (este README, `.gitignore`) no se sirve.
+Sitio estático básico de Travel Now, en la raíz de `main`, con la misma estructura del repo anterior.
 
-## Despliegue en Cloudflare Pages
+## Publicación
 
-1. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git**.
-2. Repo: `systems-idappsh/travelnow-simple-chapu`, rama: `main`.
-3. Configuración de build:
-   - Framework preset: None
-   - Build command: (vacío)
-   - Build output directory: `site`
-4. **Save and Deploy**. Cloudflare asigna una URL `*.pages.dev` para revisar el sitio.
-5. En el proyecto, **Custom domains → Set up a custom domain** → `travel-now.com.mx` (y `www` si aplica).
-6. Antes de agregar el dominio, elimina en DNS cualquier registro que apunte a `github.io` para ese host, para evitar conflictos.
+- GitHub Pages: **Settings → Pages → Source: Deploy from a branch → Branch `main` / `(root)`**.
+- Dominio: `travel-now.com.mx` (archivo `CNAME` en la raíz).
+- `.nojekyll` evita que Jekyll procese los archivos.
 
-## Actualizar el sitio
+## Estructura
 
-Cada `push` a `main` redeploya automáticamente. Edita los archivos dentro de `site/`.
+- `index.html` y `pages/`: todas las páginas.
+- `assets/`: CSS, JS (solo menú), imágenes e iconos.
+- `CNAME`, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `favicon*`: archivos de publicación.
+- `README.md`, `.gitignore`, `.nojekyll`: no son parte del sitio.
 
 ## Notas
 
-- `site/CNAME` solo aplica a GitHub Pages; con Cloudflare Pages no es necesario, pero no estorba.
-- No subir secretos, llaves ni archivos de prueba al repo.
+- No subir secretos, llaves ni archivos de prueba.
